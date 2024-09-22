@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insurance Customer Self-Service Portal</title>
+  <link rel="stylesheet" href="insurance.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Insurance Customer Self-Service Portal</h1>
+
+    <!-- Portal Navigation -->
+    <nav>
+      <button id="fileClaimBtn">File a Claim</button>
+      <button id="trackClaimBtn">Track Claims</button>
+      <button id="chatBotBtn">Chatbot Assistance</button>
+      <button id="knowledgeBaseBtn">Search Knowledge Base</button>
+    </nav>
+
+    <!-- Claim Submission Form -->
+    <div id="claimForm" class="hidden">
+
+      <h2>Submit a New Insurance Claim</h2>
+      <form id="newClaimForm">
+        <label for="policyNumber">Policy Number:</label>
+        <input type="text" id="policyNumber" required>
+
+        <label for="incidentDate">Incident Date:</label>
+        <input type="date" id="incidentDate" required>
+
+        <label for="incidentDescription">Incident Description:</label>
+        <textarea id="incidentDescription" rows="4" required></textarea>
+
+        <label for="fileUpload">Attach Files:</label>
+        <input type="file" id="fileUpload" multiple>
+
+        <button type="submit">Submit Claim</button>
+      </form>
+      <p id="formSuccessMessage" class="hidden">Claim submitted successfully!</p>
+    </div>
+
+    <!-- Claim Tracking Table -->
+    <div id="claimTracking" class="hidden">
+      <h2>Track Claims</h2>
+      <table id="claimsTable">
+        <thead>
+          <tr>
+            <th>Claim Number</th>
+            <th>Status</th>
+            <th>Date Submitted</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Chatbot Integration -->
+    <div id="chatBot" class="hidden">
+      <h2>Chat with Us (AI-Powered Chatbot)</h2>
+      <iframe src="https://console.dialogflow.com/api-client/demo/embedded/d156a955-3d48-4bb2-a621-f4e521398fda"
+        width="100%" height="500px" allow="microphone"></iframe>
+    </div>
+
+    <!-- Knowledge Base Search -->
+    <div id="knowledgeBase" class="hidden">
+      <h2>Search Knowledge Base</h2>
+      <input type="text" id="searchBar" placeholder="Search FAQs or articles">
+      <ul id="searchResults"></ul>
+    </div>
+  </div>
+
+  <script src="insurance.js"></script>
+</body>
+
+</html>
